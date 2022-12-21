@@ -450,7 +450,12 @@ cd ~/
 git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 ```
 
-#### 2. build TCGA code 
+#### 2. Edit s3 bucket
+```
+01-gdc_manifest_add.php:  $bucket="tcgademo";
+```
+
+#### 3. build TCGA code 
 ```
 conda activate g3po
 HOSTNAME=my-gen3.biobank.org.tw
@@ -458,6 +463,7 @@ cd ~/compose-services_tcga_slideimage
 ./replace google-gen4.biobank.org.tw my-gen3.biobank.org.tw -- *
 bash build.sh
 ```
+
 
 ## D. Reset gen3 
 #### 1. Reset
