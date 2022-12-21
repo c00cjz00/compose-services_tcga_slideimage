@@ -456,6 +456,7 @@ git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 ```
 
 #### 3. build TCGA code 
+About 5 hours
 ```
 conda activate g3po
 HOSTNAME=my-gen3.biobank.org.tw
