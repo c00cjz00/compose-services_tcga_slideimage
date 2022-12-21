@@ -444,7 +444,13 @@ groups: {}
 bash userSync.sh
 ```
 
-## 11.
-# 新增 TCGA PROGRAM
-https://google-gen4.biobank.org.tw/api/v0/submission/TCGA/
+## 11. git clone TCGA code 
+```
+git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
+```
 
+## 12. build TCGA code 
+```
+cd compose-services_tcga_slideimage
+bash build.sh
+```
