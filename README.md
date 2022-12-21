@@ -139,7 +139,7 @@ if __name__ == "__main__":
 
 
 ## B. update Gen3
-#### 1. Edit user.yml 
+#### 1. Edit ~/compose-services_google/Secrets/user.yaml
 change summerhill001@gmail.com to your gmail
 ```
 authz:
@@ -430,6 +430,7 @@ groups: {}
 
 #### 2.  sync user.yml
 ```
+cd ~/compose-services_google
 bash userSync.sh
 ```
 
@@ -445,15 +446,16 @@ name: TCGA
 ## C. Insert TCGA to gen3
 #### 1. git clone TCGA code 
 ```
+cd ~/
 git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 ```
 
 #### 2. build TCGA code 
 ```
-HOSTNAME=my-gen3.biobank.org.tw
-cd compose-services_tcga_slideimage
-./replace google-gen4.biobank.org.tw my-gen3.biobank.org.tw -- *
 conda activate g3po
+HOSTNAME=my-gen3.biobank.org.tw
+cd ~/compose-services_tcga_slideimage
+./replace google-gen4.biobank.org.tw my-gen3.biobank.org.tw -- *
 bash build.sh
 ```
 
@@ -465,5 +467,6 @@ docker-compose down -v
 ```
 #### 2. Start
 ```
+cd ~/compose-services_google/
 docker-compose up -d
 ```
