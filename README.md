@@ -1,19 +1,29 @@
-# compose-services_tcga_slideimage
+# A. Install Package
+## 1. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
+```
+mkdir -p ~/.gen3
+cp credentials.json ~/.gen3/credentials.json
+```
 
-## 1. Install package
+## 2. Install parallel and php
 ```
 sudo apt-get update -y
 sudo apt-get install jq parallel -y
 ```
+```
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt-get -y update
+sudo apt install -y php7.4-cli php7.4-mbstring php7.4-curl php7.4-zip php7.4-xml php7.4-mbstring php7.4-json 
+sudo systemctl stop apache2
+sudo systemctl disable apache2
+```
 
-## 2. Install Miniconda3
+## 3. Install Miniconda3 and g3po
 ```
 cd ~/
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
-
-## 3. Install g3po and Fix code
 ```
 conda create -n g3po python=3.8 -y
 conda activate g3po
@@ -98,22 +108,13 @@ LOG_FORMAT = "[%(asctime)s][%(levelname)7s] %(message)s"
 logging = get_logger("__name__",LOG_FORMAT, log_level="info")
 ```
 
-## 5. Create program name TCGA
-https://google-gen4.biobank.org.tw/api/v0/submission/TCGA/
+## 5. g3po example
 ```
-## repleace google-gen4.biobank.org.tw to your domain name, and replace the command that contains google-gen4.biobank.org.tw to your domain name below
-## https://google-gen4.biobank.org.tw/_root
-dbgap_accession_number: tcga_version1.0
-name: TCGA
+export GEN3_URL=https://google-gen4.biobank.org.tw/
+g3po index list
 ```
 
-## 6. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
-```
-mkdir -p ~/.gen3
-cp credentials.json ~/.gen3/credentials.json
-```
-
-## 7. auth.py example
+## 6. auth.py example
 ```
 from gen3.index import Gen3Index
 from gen3.auth import Gen3Auth
@@ -135,22 +136,10 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-## 7. g3po example
-```
-export GEN3_URL=https://google-gen4.biobank.org.tw/
-g3po index list
-```
 
-## 8. instal php 
-```
-sudo add-apt-repository ppa:ondrej/php -y
-sudo apt-get -y update
-sudo apt install -y php7.4-cli php7.4-mbstring php7.4-curl php7.4-zip php7.4-xml php7.4-mbstring php7.4-json 
-sudo systemctl stop apache2
-sudo systemctl disable apache2
-```
 
-## 9. Edit user.yml 
+# B. update Gen3
+## 1. Edit user.yml 
 change summerhill001@gmail.com to your gmail
 ```
 authz:
@@ -439,19 +428,37 @@ cloud_providers: {}
 groups: {}
 ```
 
-## 10. user sync
+## 2.  sync user.yml
 ```
 bash userSync.sh
 ```
 
-## 11. git clone TCGA code 
+## 3. Create program name TCGA
+https://google-gen4.biobank.org.tw/api/v0/submission/TCGA/
+```
+## repleace google-gen4.biobank.org.tw to your domain name, and replace the command that contains google-gen4.biobank.org.tw to your domain name below
+## https://google-gen4.biobank.org.tw/_root
+dbgap_accession_number: tcga_version1.0
+name: TCGA
+```
+
+# C. TCGA
+## 1. git clone TCGA code 
 ```
 git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 ```
 
 ## 12. build TCGA code 
 ```
+HOSTNAME=my-gen3.biobank.org.tw
 cd compose-services_tcga_slideimage
+./replace google-gen4.biobank.org.tw my-gen3.biobank.org.tw -- *
 conda activate g3po
 bash build.sh
+```
+
+# D. Reset gen3
+```
+cd ~/compose-services_google/
+docker-compose down -v
 ```
