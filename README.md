@@ -99,11 +99,12 @@ logging = get_logger("__name__",LOG_FORMAT, log_level="info")
 ```
 
 ## 5. Create program name TCGA
+https://google-gen4.biobank.org.tw/api/v0/submission/TCGA/
 ```
 ## repleace google-gen4.biobank.org.tw to your domain name, and replace the command that contains google-gen4.biobank.org.tw to your domain name below
 ## https://google-gen4.biobank.org.tw/_root
-dbgap_accession_number: 
-tcga_version1.0 and name: TCGA
+dbgap_accession_number: tcga_version1.0
+name: TCGA
 ```
 
 ## 6. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
@@ -442,3 +443,8 @@ groups: {}
 ```
 bash userSync.sh
 ```
+
+## 11.
+# 新增 TCGA PROGRAM
+https://google-gen4.biobank.org.tw/api/v0/submission/TCGA/
+
