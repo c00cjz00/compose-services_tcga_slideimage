@@ -1,11 +1,11 @@
-# A. Install Package
-1. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
+## A. Install Package
+### 1. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
 ```
 mkdir -p ~/.gen3
 cp credentials.json ~/.gen3/credentials.json
 ```
 
-## 2. Install parallel and php
+### 2. Install parallel and php
 ```
 sudo apt-get update -y
 sudo apt-get install jq parallel -y
