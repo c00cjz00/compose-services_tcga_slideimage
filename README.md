@@ -442,13 +442,13 @@ dbgap_accession_number: tcga_version1.0
 name: TCGA
 ```
 
-# C. TCGA
+# C. Insert TCGA to gen3
 ## 1. git clone TCGA code 
 ```
 git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 ```
 
-## 12. build TCGA code 
+## 2. build TCGA code 
 ```
 HOSTNAME=my-gen3.biobank.org.tw
 cd compose-services_tcga_slideimage
@@ -457,7 +457,7 @@ conda activate g3po
 bash build.sh
 ```
 
-# D. Reset gen3
+# D. Reset gen3 
 ```
 cd ~/compose-services_google/
 docker-compose down -v
