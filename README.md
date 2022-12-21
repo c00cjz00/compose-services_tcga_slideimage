@@ -9,7 +9,9 @@ cp credentials.json ~/.gen3/credentials.json
 ```
 sudo apt-get update -y
 sudo apt-get install jq parallel -y
+parallel --citation
 ```
+
 ```
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get -y update
