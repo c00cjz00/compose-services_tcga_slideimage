@@ -464,6 +464,17 @@ cd ~/compose-services_tcga_slideimage
 bash build.sh
 ```
 
+#### 4. Running setup guppy 
+```
+cd ~/compose-services_google
+bash ./guppy_setup.sh
+```
+
+#### 5. Restart Server
+```
+docker-compose down
+docker-compose up -d
+```
 
 ## D. Reset gen3 
 #### 1. Reset
