@@ -452,5 +452,6 @@ git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 ## 12. build TCGA code 
 ```
 cd compose-services_tcga_slideimage
+conda activate g3po
 bash build.sh
 ```
