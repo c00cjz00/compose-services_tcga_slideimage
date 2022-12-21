@@ -461,4 +461,6 @@ bash build.sh
 ```
 cd ~/compose-services_google/
 docker-compose down -v
+sleep 3
+docker-compose up -d
 ```
