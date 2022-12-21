@@ -1,5 +1,5 @@
 ## A. Install Package
-### 1. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
+#### 1. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
 ```
 mkdir -p ~/.gen3
 cp credentials.json ~/.gen3/credentials.json
