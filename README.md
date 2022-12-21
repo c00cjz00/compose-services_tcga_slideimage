@@ -57,7 +57,7 @@ a. ~/miniconda3/envs/g3po/lib/python3.8/site-packages/indexclient/client.py
             "uploader": uploader, ## Add this line
         }
 ```
-## b. ~/miniconda3/envs/g3po/lib/python3.8/site-packages/gen3/index.py
+b. ~/miniconda3/envs/g3po/lib/python3.8/site-packages/gen3/index.py
 ```
     def create_record(
         self,
