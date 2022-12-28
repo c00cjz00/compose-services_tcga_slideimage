@@ -13,7 +13,7 @@ foreach ($arr as $key => $value) {
 }
 
 
-$manifest="gdc_manifest.txt";
+$manifest="tcga_data/gdc_manifest.txt";
 $arr=file($manifest);
 foreach ($arr as $key => $value) {
  //id      filename        md5     size    state	

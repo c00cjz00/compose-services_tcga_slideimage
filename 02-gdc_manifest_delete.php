@@ -1,7 +1,7 @@
 <?php
 // conda activate g3po4
 // export GEN3_URL=https://google-gen4.biobank.org.tw/
-$manifest="gdc_manifest.txt";
+$manifest="tcga_data/gdc_manifest.txt";
 $arr=file($manifest);
 foreach ($arr as $key => $value) {
  //id      filename        md5     size    state	

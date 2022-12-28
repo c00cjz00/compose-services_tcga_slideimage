@@ -7,7 +7,7 @@ $program_id=$argv[1];
 
 
 
-$manifest="gdc_manifest.txt";
+$manifest="tcga_data/gdc_manifest.txt";
 $arr=file($manifest);
 foreach ($arr as $key => $value) {
  //id      filename        md5     size    state	

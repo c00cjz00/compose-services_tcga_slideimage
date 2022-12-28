@@ -13,7 +13,7 @@ foreach ($json_data as $key => $arr) {
  $$file_name_tmp=$project_id;
 }
 
-$manifest="gdc_manifest.txt";
+$manifest="tcga_data/gdc_manifest.txt";
 $arr=file($manifest);
 foreach ($arr as $key => $value) {
  //id      filename        md5     size    state	
