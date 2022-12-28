@@ -472,6 +472,7 @@ bash build_demo.sh
 
 #### 4. Edit nginx
 vi ~/compose-services_google/nginx.conf
+
 Replace
 ```
         #location /guppy/ {
