@@ -465,7 +465,7 @@ About 5 hours for bash build.sh
 conda activate g3po
 HOSTNAME=google-gen4.biobank.org.tw
 cd ~/compose-services_tcga_slideimage
-./replace google-gen4.biobank.org.tw my-gen3.biobank.org.tw -- *
+./replace google-gen4.biobank.org.tw ${HOSTNAME} -- *
 bash build_demo.sh
 #bash build.sh
 ```
