@@ -460,13 +460,14 @@ git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 ```
 
 #### 3. build TCGA code 
-About 5 hours
+About 5 hours for bash build.sh
 ```
 conda activate g3po
 HOSTNAME=google-gen4.biobank.org.tw
 cd ~/compose-services_tcga_slideimage
 ./replace google-gen4.biobank.org.tw my-gen3.biobank.org.tw -- *
-bash build.sh
+bash build_demo.sh
+#bash build.sh
 ```
 
 #### 4. Running setup guppy 
