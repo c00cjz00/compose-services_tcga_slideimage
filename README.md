@@ -470,13 +470,28 @@ bash build_demo.sh
 #bash build.sh
 ```
 
-#### 4. Running setup guppy 
+#### 4. Edit nginx
+vi ~/compose-services_google/nginx.conf
+Replace
+```
+        #location /guppy/ {
+        #    proxy_pass http://guppy-service/;
+        #}
+```
+to
+```
+        location /guppy/ {
+            proxy_pass http://guppy-service/;
+        }
+```
+
+#### 5. Running setup guppy
 ```
 cd ~/compose-services_google
 bash ./guppy_setup.sh
 ```
 
-#### 5. Restart Server
+#### 6. Restart Server
 ```
 docker-compose down
 docker-compose up -d
