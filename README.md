@@ -437,6 +437,7 @@ bash userSync.sh
 ```
 
 #### 3. Create program name TCGA
+https://google-gen4.biobank.org.tw/_root
 https://google-gen4.biobank.org.tw/api/v0/submission/TCGA/
 ```
 ## repleace google-gen4.biobank.org.tw to your domain name, and replace the command that contains google-gen4.biobank.org.tw to your domain name below
