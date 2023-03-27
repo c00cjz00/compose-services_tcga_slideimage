@@ -1,6 +1,8 @@
 ## A. Install Package
 #### 1. Download credentials.json from your gen3 website and copy to ~/.gen3/ Folder
 ```
+cd ~/
+git clone https://github.com/c00cjz00/compose-services_tcga_slideimage.git
 mkdir -p ~/.gen3
 cp credentials.json ~/.gen3/credentials.json
 cp credentials.json ~/compose-services_tcga_slideimage/tcga_data/credentials.json
