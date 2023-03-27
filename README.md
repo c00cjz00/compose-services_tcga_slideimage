@@ -3,6 +3,7 @@
 ```
 mkdir -p ~/.gen3
 cp credentials.json ~/.gen3/credentials.json
+cp credentials.json ~/compose-services_tcga_slideimage/tcga_data/credentials.json
 ```
 
 #### 2. Install parallel and php
